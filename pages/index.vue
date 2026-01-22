@@ -15,7 +15,7 @@
     <section class="section bg-olive relative overflow-hidden">
       <div class="absolute inset-0">
         <img 
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=80" 
+          src="/top.jpg" 
           alt="Hero" 
           class="w-full h-full object-cover opacity-40"
         >
@@ -83,7 +83,7 @@
           <div class="text-center">
             <div class="aspect-[3/4] max-w-xs mx-auto mb-8 overflow-hidden rounded-lg shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" 
+                src="/groom.jpg" 
                 alt="Groom" 
                 class="w-full h-full object-cover"
               >
@@ -100,7 +100,7 @@
           <div class="text-center">
             <div class="aspect-[3/4] max-w-xs mx-auto mb-8 overflow-hidden rounded-lg shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80" 
+                src="/bride.jpg" 
                 alt="Bride" 
                 class="w-full h-full object-cover"
               >
@@ -120,7 +120,7 @@
     <section class="section bg-olive text-white relative overflow-hidden">
       <div class="absolute inset-0">
         <img 
-          src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=1600&q=80" 
+          src="/countdown.jpg" 
           alt="Background" 
           class="w-full h-full object-cover opacity-30"
         >
