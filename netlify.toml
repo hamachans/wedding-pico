@@ -1,7 +1,7 @@
 [build]
   base = "pico-wedding"
   command = "npm install && npm run generate"
-  publish = ".nuxt/dist"
+  publish = ".output/public"
 
 [build.environment]
   NODE_VERSION = "20"
