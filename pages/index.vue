@@ -297,6 +297,159 @@
       </div>
     </section>
 
+    <!-- Section 9: RSVP Form -->
+    <section class="section bg-white">
+      <div class="max-w-2xl mx-auto px-6">
+        <div class="text-center mb-12">
+          <p class="text-sm tracking-[0.3em] text-olive mb-4">RSVP</p>
+          <p class="text-gray-500">出欠のご連絡</p>
+        </div>
+        
+        <form 
+          name="rsvp" 
+          method="POST" 
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          @submit.prevent="handleSubmit"
+          class="bg-cream rounded-lg p-8 md:p-12 shadow-lg"
+        >
+          <input type="hidden" name="form-name" value="rsvp" />
+          <p class="hidden">
+            <label>Don't fill this out: <input name="bot-field" /></label>
+          </p>
+          
+          <div class="space-y-6">
+            <!-- Name -->
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                お名前 <span class="text-red-500">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="name"
+                name="name" 
+                v-model="form.name"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-olive focus:border-transparent transition-all"
+                placeholder="山田 太郎"
+              />
+            </div>
+            
+            <!-- Email -->
+            <div>
+              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                メールアドレス <span class="text-red-500">*</span>
+              </label>
+              <input 
+                type="email" 
+                id="email"
+                name="email" 
+                v-model="form.email"
+                required
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-olive focus:border-transparent transition-all"
+                placeholder="example@email.com"
+              />
+            </div>
+            
+            <!-- Attendance -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">
+                ご出欠 <span class="text-red-500">*</span>
+              </label>
+              <div class="flex gap-6">
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="attendance" 
+                    value="attend" 
+                    v-model="form.attendance"
+                    required
+                    class="w-5 h-5 text-olive focus:ring-olive"
+                  />
+                  <span>出席</span>
+                </label>
+                <label class="flex items-center gap-2 cursor-pointer">
+                  <input 
+                    type="radio" 
+                    name="attendance" 
+                    value="absent" 
+                    v-model="form.attendance"
+                    class="w-5 h-5 text-olive focus:ring-olive"
+                  />
+                  <span>欠席</span>
+                </label>
+              </div>
+            </div>
+            
+            <!-- Number of guests -->
+            <div v-if="form.attendance === 'attend'">
+              <label for="guests" class="block text-sm font-medium text-gray-700 mb-2">
+                参加人数
+              </label>
+              <select 
+                id="guests"
+                name="guests" 
+                v-model="form.guests"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-olive focus:border-transparent transition-all"
+              >
+                <option value="1">1名</option>
+                <option value="2">2名</option>
+                <option value="3">3名</option>
+                <option value="4">4名以上</option>
+              </select>
+            </div>
+            
+            <!-- Allergies -->
+            <div v-if="form.attendance === 'attend'">
+              <label for="allergies" class="block text-sm font-medium text-gray-700 mb-2">
+                アレルギー・苦手な食べ物
+              </label>
+              <input 
+                type="text" 
+                id="allergies"
+                name="allergies" 
+                v-model="form.allergies"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-olive focus:border-transparent transition-all"
+                placeholder="例：甲殻類、ナッツ類"
+              />
+            </div>
+            
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+                メッセージ
+              </label>
+              <textarea 
+                id="message"
+                name="message" 
+                v-model="form.message"
+                rows="4"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-olive focus:border-transparent transition-all resize-none"
+                placeholder="お祝いのメッセージやご質問など"
+              ></textarea>
+            </div>
+            
+            <!-- Submit -->
+            <div class="pt-4">
+              <button 
+                type="submit"
+                :disabled="isSubmitting"
+                class="w-full py-4 bg-olive text-white font-medium rounded-lg hover:bg-olive/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {{ isSubmitting ? '送信中...' : '送信する' }}
+              </button>
+            </div>
+          </div>
+        </form>
+        
+        <!-- Success Message -->
+        <div v-if="isSubmitted" class="mt-8 p-6 bg-green-50 rounded-lg text-center">
+          <p class="text-green-800 text-lg">✓ ご回答ありがとうございます！</p>
+          <p class="text-green-600 mt-2">確認メールをお送りしました。</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
     <footer class="py-8 bg-olive text-white/60 text-center text-sm">
       <p>Sae & Koudai Wedding Party</p>
@@ -317,7 +470,47 @@ const countdown = ref({
   seconds: 0
 })
 
-const sections = ['hero', 'greeting', 'host', 'countdown', 'info', 'access', 'gallery', 'message']
+// Form state
+const form = ref({
+  name: '',
+  email: '',
+  attendance: '',
+  guests: '1',
+  allergies: '',
+  message: ''
+})
+const isSubmitting = ref(false)
+const isSubmitted = ref(false)
+
+const handleSubmit = async () => {
+  isSubmitting.value = true
+  
+  try {
+    const formData = new FormData()
+    formData.append('form-name', 'rsvp')
+    formData.append('name', form.value.name)
+    formData.append('email', form.value.email)
+    formData.append('attendance', form.value.attendance)
+    formData.append('guests', form.value.guests)
+    formData.append('allergies', form.value.allergies)
+    formData.append('message', form.value.message)
+    
+    await fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData as any).toString()
+    })
+    
+    isSubmitted.value = true
+    form.value = { name: '', email: '', attendance: '', guests: '1', allergies: '', message: '' }
+  } catch (error) {
+    alert('送信に失敗しました。もう一度お試しください。')
+  } finally {
+    isSubmitting.value = false
+  }
+}
+
+const sections = ['hero', 'greeting', 'host', 'countdown', 'info', 'access', 'gallery', 'message', 'rsvp']
 const currentSection = ref(0)
 
 const galleryPhotos = [
