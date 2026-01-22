@@ -1,5 +1,5 @@
 [build]
-  base = "pico-wedding"
+  base = ""
   command = "npm run build"
   publish = ".output/public"
 
