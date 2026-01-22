@@ -381,24 +381,6 @@
               </div>
             </div>
             
-            <!-- Number of guests -->
-            <div v-if="form.attendance === 'attend'">
-              <label for="guests" class="block text-sm font-medium text-gray-700 mb-2">
-                参加人数
-              </label>
-              <select 
-                id="guests"
-                name="guests" 
-                v-model="form.guests"
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-olive focus:border-transparent transition-all"
-              >
-                <option value="1">1名</option>
-                <option value="2">2名</option>
-                <option value="3">3名</option>
-                <option value="4">4名以上</option>
-              </select>
-            </div>
-            
             <!-- Allergies -->
             <div v-if="form.attendance === 'attend'">
               <label for="allergies" class="block text-sm font-medium text-gray-700 mb-2">
@@ -475,7 +457,6 @@ const form = ref({
   name: '',
   email: '',
   attendance: '',
-  guests: '1',
   allergies: '',
   message: ''
 })
@@ -491,7 +472,6 @@ const handleSubmit = async () => {
     formData.append('name', form.value.name)
     formData.append('email', form.value.email)
     formData.append('attendance', form.value.attendance)
-    formData.append('guests', form.value.guests)
     formData.append('allergies', form.value.allergies)
     formData.append('message', form.value.message)
     
@@ -502,7 +482,7 @@ const handleSubmit = async () => {
     })
     
     isSubmitted.value = true
-    form.value = { name: '', email: '', attendance: '', guests: '1', allergies: '', message: '' }
+    form.value = { name: '', email: '', attendance: '', allergies: '', message: '' }
   } catch (error) {
     alert('送信に失敗しました。もう一度お試しください。')
   } finally {
