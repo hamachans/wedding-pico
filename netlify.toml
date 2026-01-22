@@ -1,7 +1,7 @@
 [build]
-  base = ""
-  command = "npm run build"
-  publish = ".output/public"
+  base = "pico-wedding"
+  command = "npm run generate"
+  publish = "dist"
 
 [build.environment]
   NODE_VERSION = "20"
