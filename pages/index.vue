@@ -303,6 +303,10 @@
         <div class="text-center mb-12">
           <p class="text-sm tracking-[0.3em] text-olive mb-4">RSVP</p>
           <p class="text-gray-500">出欠のご連絡</p>
+          <p class="text-gray-500 mt-4 text-sm">
+            新郎新婦との思い出写真を持っている方がいれば、<br class="md:hidden">
+            新郎新婦に送っていただけると助かります
+          </p>
         </div>
         
         <form 
@@ -332,22 +336,6 @@
                 required
                 class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-olive focus:border-transparent transition-all"
                 placeholder="山田 太郎"
-              />
-            </div>
-            
-            <!-- Email -->
-            <div>
-              <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
-                メールアドレス <span class="text-red-500">*</span>
-              </label>
-              <input 
-                type="email" 
-                id="email"
-                name="email" 
-                v-model="form.email"
-                required
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-olive focus:border-transparent transition-all"
-                placeholder="example@email.com"
               />
             </div>
             
