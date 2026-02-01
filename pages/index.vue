@@ -185,18 +185,14 @@
             
             <div class="text-center space-y-4 text-gray-600">
               <p class="text-3xl font-display text-olive">¥9,000</p>
+              <p class="text-sm text-gray-500">※ 7/31までにお支払いをお願いいたします</p>
               <div class="text-sm space-y-2 mt-4">
                 <p class="font-medium text-gray-700">お支払い方法</p>
-                <p>銀行振込 または PayPay</p>
-                <div class="mt-4 p-4 bg-gray-50 rounded-lg max-w-xs mx-auto">
-                  <p class="font-medium text-gray-700 mb-2">銀行振込先</p>
-                  <p>三井住友銀行 五反田支店</p>
-                  <p>口座番号: 8675394</p>
-                </div>
+                <p>PayPay</p>
                 <div class="mt-4 p-4 bg-gray-50 rounded-lg max-w-xs mx-auto">
                   <p class="font-medium text-gray-700 mb-2">PayPay</p>
                   <a 
-                    href="https://qr.paypay.ne.jp/p2p01_Vw8WVpBGzXnsEvdl" 
+                    href="https://qr.paypay.ne.jp/p2p01_deuBcji3Qcg1l66f" 
                     target="_blank"
                     class="inline-block text-olive underline hover:no-underline"
                   >
