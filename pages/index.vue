@@ -24,7 +24,7 @@
         <div class="text-center text-white px-6">
           <p class="text-sm tracking-[0.3em] mb-6 opacity-80">WEDDING INVITATION</p>
           <h1 class="font-display text-5xl md:text-7xl lg:text-8xl mb-8 tracking-wide">
-            Sae & Koudai
+            Koudai & Sae
           </h1>
           <div class="flex items-center justify-center gap-6 text-lg opacity-80">
             <span class="h-px w-16 bg-white/50"></span>
@@ -44,7 +44,7 @@
     <section class="section bg-cream">
       <div class="max-w-3xl mx-auto px-6 text-center">
         <p class="text-sm tracking-[0.3em] text-olive mb-8">GREETING</p>
-        <div class="space-y-6 text-lg leading-loose text-gray-600">
+        <div class="space-y-6 text-base leading-loose text-gray-600">
           <p>謹啓</p>
           <p>
             皆様におかれましては<br class="md:hidden">
@@ -65,7 +65,7 @@
             お願い申し上げます
           </p>
           <p class="pt-4">謹白</p>
-          <p class="font-display text-2xl text-olive pt-6">Sae & Koudai</p>
+          <p class="font-display text-2xl text-olive pt-6">Koudai & Sae</p>
         </div>
       </div>
     </section>
@@ -91,8 +91,7 @@
             <p class="text-sm tracking-[0.2em] text-olive mb-2">GROOM</p>
             <h3 class="font-display text-3xl mb-4">Koudai</h3>
             <p class="text-gray-500 leading-relaxed">
-              みなさんにお会いできることを<br>
-              楽しみにしております！
+              30代の本気見せます!
             </p>
           </div>
           
@@ -108,8 +107,8 @@
             <p class="text-sm tracking-[0.2em] text-olive mb-2">BRIDE</p>
             <h3 class="font-display text-3xl mb-4">Sae</h3>
             <p class="text-gray-500 leading-relaxed">
-              素敵な一日を一緒に<br>
-              過ごせることを願っています！
+              たくさん飲んでたくさん食べて<br>
+              たくさん笑いましょう！
             </p>
           </div>
         </div>
@@ -173,7 +172,50 @@
             </div>
             <div class="space-y-2 text-gray-600">
               <p>開場 / <span class="text-xl font-medium text-gray-800">15:00</span></p>
-              <p>開宴 / <span class="text-xl font-medium text-gray-800">16:00</span></p>
+              <p>開宴 / <span class="text-xl font-medium text-gray-800">15:15</span></p>
+              <p>閉園 / <span class="text-xl font-medium text-gray-800">18:00</span></p>
+            </div>
+          </div>
+          
+          <div class="border-t border-gray-100 mt-10 pt-10">
+            <div class="text-center mb-8">
+              <p class="text-sm tracking-[0.2em] text-olive mb-2">FEE</p>
+              <h3 class="font-display text-2xl">会費</h3>
+            </div>
+            
+            <div class="text-center space-y-4 text-gray-600">
+              <p class="text-3xl font-display text-olive">¥9,000</p>
+              <div class="text-sm space-y-2 mt-4">
+                <p class="font-medium text-gray-700">お支払い方法</p>
+                <p>銀行振込 または PayPay</p>
+                <div class="mt-4 p-4 bg-gray-50 rounded-lg max-w-xs mx-auto">
+                  <p class="font-medium text-gray-700 mb-2">銀行振込先</p>
+                  <p>三井住友銀行 五反田支店</p>
+                  <p>口座番号: 8675394</p>
+                </div>
+                <div class="mt-4 p-4 bg-gray-50 rounded-lg max-w-xs mx-auto">
+                  <p class="font-medium text-gray-700 mb-2">PayPay</p>
+                  <a 
+                    href="https://qr.paypay.ne.jp/p2p01_Vw8WVpBGzXnsEvdl" 
+                    target="_blank"
+                    class="inline-block text-olive underline hover:no-underline"
+                  >
+                    こちらから送金
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="border-t border-gray-100 mt-10 pt-10">
+            <div class="text-center mb-8">
+              <p class="text-sm tracking-[0.2em] text-olive mb-2">DRESS CODE</p>
+              <h3 class="font-display text-2xl">服装</h3>
+            </div>
+            
+            <div class="text-center space-y-4 text-gray-600">
+              <p>ドレスコードはありません</p>
+              <p>みなさんのお好きな服装でお越しください</p>
             </div>
           </div>
           
@@ -188,7 +230,7 @@
               <p>横浜赤レンガ倉庫 2号館 1F</p>
               <p>〒231-0001 神奈川県横浜市中区新港1-1</p>
               <a 
-                href="https://www.butcher-republic.com/yokohama/" 
+                href="https://www.butcher-republic.com/akarenga.html" 
                 target="_blank"
                 class="inline-block text-olive underline hover:no-underline"
               >
@@ -246,35 +288,13 @@
       </div>
     </section>
 
-    <!-- Section 7: Gallery -->
-    <section class="section bg-olive relative overflow-hidden">
-      <div class="absolute inset-0 flex">
-        <div 
-          v-for="(photo, i) in galleryPhotos" 
-          :key="i"
-          class="flex-1"
-        >
-          <img 
-            :src="photo" 
-            :alt="`Gallery ${i + 1}`" 
-            class="w-full h-full object-cover opacity-60"
-          >
-        </div>
-      </div>
-      <div class="relative z-10 text-center text-white px-6">
-        <p class="text-sm tracking-[0.3em] mb-4 opacity-80">GALLERY</p>
-        <h2 class="font-display text-4xl md:text-5xl mb-4">Photo Gallery</h2>
-        <p class="text-gray-200">※ 後日写真を追加予定です</p>
-      </div>
-    </section>
-
     <!-- Section 8: Message -->
     <section class="section bg-cream">
       <div class="max-w-3xl mx-auto px-6 text-center">
         <p class="text-sm tracking-[0.3em] text-olive mb-4">MESSAGE</p>
         <p class="text-gray-500 mb-12">TO OUR ESTEEMED FRIENDS</p>
         
-        <div class="space-y-6 text-lg leading-loose text-gray-600">
+        <div class="space-y-6 text-base leading-loose text-gray-600">
           <p>
             いつもお世話になっている<br class="md:hidden">
             大切な皆様へ
@@ -291,7 +311,7 @@
         </div>
         
         <div class="mt-12 pt-8 border-t border-gray-200">
-          <p class="font-display text-3xl text-olive">Sae & Koudai</p>
+          <p class="font-display text-3xl text-olive">Koudai & Sae</p>
           <p class="text-sm text-gray-400 mt-4">2026.08.09</p>
         </div>
       </div>
@@ -422,7 +442,7 @@
 
     <!-- Footer -->
     <footer class="py-8 bg-olive text-white/60 text-center text-sm">
-      <p>Sae & Koudai Wedding Party</p>
+      <p>Koudai & Sae Wedding Party</p>
       <p class="mt-1">2026.08.09</p>
     </footer>
   </div>
