@@ -91,7 +91,7 @@
             <p class="text-sm tracking-[0.2em] text-olive mb-2">GROOM</p>
             <h3 class="font-display text-3xl mb-4">Koudai</h3>
             <p class="text-gray-500 leading-relaxed">
-              30代の本気見せます!
+              30代の本気見せます！
             </p>
           </div>
           
@@ -173,7 +173,7 @@
             <div class="space-y-2 text-gray-600">
               <p>開場 / <span class="text-xl font-medium text-gray-800">15:00</span></p>
               <p>開宴 / <span class="text-xl font-medium text-gray-800">15:15</span></p>
-              <p>閉園 / <span class="text-xl font-medium text-gray-800">18:00</span></p>
+              <p>閉宴 / <span class="text-xl font-medium text-gray-800">18:00</span></p>
             </div>
           </div>
           
@@ -308,7 +308,7 @@
         
         <div class="mt-12 pt-8 border-t border-gray-200">
           <p class="font-display text-3xl text-olive">Koudai & Sae</p>
-          <p class="text-sm text-gray-400 mt-4">2026.08.09</p>
+          <p class="text-sm text-gray-400 mt-4">2026.02.08</p>
         </div>
       </div>
     </section>
@@ -431,7 +431,6 @@
         <!-- Success Message -->
         <div v-if="isSubmitted" class="mt-8 p-6 bg-green-50 rounded-lg text-center">
           <p class="text-green-800 text-lg">✓ ご回答ありがとうございます！</p>
-          <p class="text-green-600 mt-2">確認メールをお送りしました。</p>
         </div>
       </div>
     </section>
